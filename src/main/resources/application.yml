@@ -1,0 +1,34 @@
+# ===============================
+# = PARAMETERS
+# ===============================
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+# UNIX or MAC
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/PETCLINIC_DB?useSSL=false
+    username: root
+    password: "" # Coloca la contraseña si aplica
+    platform: mysql
+    initialization-mode: always
+
+  jpa:
+    generate-ddl: true   # Genera el esquema de base de datos
+    hibernate:
+      ddl-auto: update   # Usualmente 'update', 'validate', 'create-drop', o 'none'
+    show-sql: true       # Muestra las consultas SQL en la consola
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect   # Cambia a MySQL8 si es aplicable
+
+logging:
+  level:
+    root: INFO
+
+server:
+  port: 8080
